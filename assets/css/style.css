@@ -1,0 +1,126 @@
+
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+    --primary: #3043bd;
+    --secondary: rgb(209, 209, 209);
+    --nav-color: white;
+    --primary-focus: rgba(57, 73, 171, 0.125);
+    --border-width: none;
+    --form-element-placeholder-color: var(--secondary);
+    --border-radius: none;
+    --background-color-role: rgba(0,0,0,0.26);
+}
+
+/*BAR NAV*/
+
+nav {
+    background: var(--primary);
+}
+ul {
+  color: var(--nav-color);
+}
+li a {
+  color: var(--nav-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body>footer, body>header, body>main {
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+
+/*ARTICLES*/
+article {
+  position: relative;
+  padding: 0;
+}
+
+article a {
+    width: 100%;
+}
+
+article p {
+    margin-bottom: var(--block-spacing-vertical);
+}
+
+article img {
+  margin-bottom: 2.5rem;
+}
+
+article a {
+    position: absolute;
+    bottom: 0;
+}
+
+
+.grid {
+    grid-column-gap: var(--grid-spacing-horizontal);
+    grid-row-gap: var(--grid-spacing-vertical);
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+main .container:first-child {
+  margin-top: var(--block-spacing-vertical);
+}
+
+main .container-fluid:last-child {
+  background: var(--secondary);
+  padding: var(--block-spacing-vertical);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+/*FOOTER*/
+
+footer {
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+footer p {
+    margin-bottom: 0;
+    padding: var(--spacing);
+    color: var(--secondary);
+    text-align: center;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin: 0;
+    }
+
+    article p {
+        padding-bottom: var(--spacing);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        margin: 0;
+    }
+
+    article p {
+        padding-bottom: var(--block-spacing-vertical);
+    }
+
+}
